@@ -23,7 +23,7 @@ How to Use
 Run `run_first.py` script. This will compute the hashes of your files in the aforementioned directories and encrypt the resulting hash database using a password that you provide:
 
 ```bash
-$ python3 run_first.py
+python3 run_first.py
 ```
 
 ### Periodic Integrity Check:
@@ -31,7 +31,7 @@ $ python3 run_first.py
 Execute the `file_integrity_check.py` script. This will ask for the encryption password, decrypt the saved hash database, check for new files to hash, and perform integrity checks against the saved hashes:
 
 ```bash
-$ python3 file_integrity_check.py
+python3 file_integrity_check.py
 ```
 
 Installation and Running
@@ -41,7 +41,7 @@ Installation and Running
 2.  Clone the repository:
 
 ```bash
-$ git clone https://github.com/rgerjeki/file-integrity-checker.git
+https://github.com/rgerjeki/File-Integrity-Checker.git
 ```
 
 1.  Navigate to the directory containing the scripts using a terminal or command prompt.
