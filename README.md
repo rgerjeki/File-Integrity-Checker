@@ -1,62 +1,76 @@
-# File Integrity Checker
+File Integrity Checker
+======================
 
-## Description
-This Python program provides a simple utility to compute the SHA-256 hash of a file and check the file's integrity by comparing its current hash with a given original hash.
+Description
+-----------
 
-## Features
-- Compute the SHA-256 hash of a file.
-- Check if a file has been modified or corrupted by comparing it with an original hash.
+This Python program provides a simple utility to compute the SHA-256 hash of a file and check the file's integrity by comparing its current hash with a saved original hash.
 
-## How to Use
+Features
+--------
 
-1. **Computing File Hash**
-    - Run the program.
-    - Choose option `1` to compute the hash of a file.
-    - Enter the file's path.
-    - The program will display the SHA-256 hash of the file.
+- Computes and saves the SHA-256 hash of every file in the `Desktop`, `Documents`, and `Downloads` directories.
+- Encrypted hash database using a user-provided password.
+- Periodic integrity checks against the saved hashes.
+- Visual progress bars using `tqdm`.
+- Tabular summaries using `prettytable`.
 
-2. **Checking File Integrity**
-    - Run the program.
-    - Choose option `2` to check the integrity of a file.
-    - Enter the file's path.
-    - Enter the original hash value of the file.
-    - The program will compare the current hash of the file with the given original hash and notify if the file is intact or has been modified.
+How to Use
+----------
 
-## Installation and Running
+### Initial Setup:
 
-1. Ensure you have Python installed on your machine.
-2. Clone the repository or download the Python script.
-3. Navigate to the directory containing the script using a terminal or command prompt.
-4. Run the script:
+Run `run_first.py` script. This will compute the hashes of your files in the aforementioned directories and encrypt the resulting hash database using a password that you provide:
+
+```bash
+$ python3 run_first.py
+```
+
+### Periodic Integrity Check:
+
+Execute the `file_integrity_check.py` script. This will ask for the encryption password, decrypt the saved hash database, check for new files to hash, and perform integrity checks against the saved hashes:
+
 ```bash
 $ python3 file_integrity_check.py
 ```
 
-## Dependencies
-- Python's built-in `hashlib` library.
+Installation and Running
+------------------------
 
-## Troubleshooting
-- If you encounter the message "Invalid Filename Path.", ensure that:
-- The file exists at the specified path.
-- You have the necessary permissions to read the file.
+1.  Ensure you have Python installed on your machine.
+2.  Clone the repository:
 
-- If you see the message "Invalid choice!", ensure you enter either `1` or `2` at the prompt.
+```bash
+$ git clone https://github.com/rgerjeki/file-integrity-checker.git
+```
 
-## License
-This project is open-source and available to everyone. Feel free to use, modify, or distribute as you see fit.
+1.  Navigate to the directory containing the scripts using a terminal or command prompt.
+2.  Follow the usage instructions above to compute hashes or perform integrity checks.
 
-## Contribution
-For any suggestions or improvements, please raise an issue or make a pull request on the repository.
+Dependencies
+------------
 
-## Contributing
+-   Python's built-in libraries: `os`, `json`, and `hashlib`.
+-   External libraries: `tqdm`, `prettytable`, and `cryptography`.
+
+Troubleshooting
+---------------
+
+-   Ensure that you have the necessary permissions to read the files in the specified directories.
+-   If you encounter decryption errors, verify that you have provided the correct password.
+
+License
+-------
+
+This project is licensed under the MIT License. Check the `LICENSE` file for more details.
+
+Contributing
+------------
 
 If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
-## License
-
-This project is free and open-source. You can use, modify, and distribute it under the terms of the MIT License. Check the `LICENSE` file for more details.
-
-## Author
+Author
+------
 
 [rgerjeki](https://github.com/rgerjeki)
 
